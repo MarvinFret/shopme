@@ -1,52 +1,48 @@
 <template>
-  <div class="collapse">
-    <div @click="show=!show;" class="header">
-      <slot name="header"></slot>
-      <font-awesome-icon v-if="!show" :icon="chevronDown" size="1x" />
-      <font-awesome-icon v-else :icon="chevronUp" size="1x" />
-    </div>
-    <transition>
-      <div v-if="show" class="collapse-content">
-        <slot name="content"></slot>
-      </div>
-    </transition>
-  </div>
+   <header>
+      <div class="logo">$hopm€</div>
+      <nav>
+         <div class="menu-icon">
+            <svg viewBox="0 0 100 80" width="30" height="30">
+               <rect></rect>
+               <rect y="30"></rect>
+               <rect y="60"></rect>
+            </svg>
+         </div>
+      </nav>
+   </header>
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-
-export default {
-  name: 'Collapse',
-  components: {FontAwesomeIcon},
-  data () {
-    return {
-      show: false,
-      chevronUp: faChevronUp,
-      chevronDown: faChevronDown,
-    }
-  },
-}
 </script>
 <style scoped>
 header {
-  font-family: 'Quicksand', cursive;
-  letter-spacing: 1px;
-  font-size: 18px;
-  height: 55px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ff8c22;
-  padding-left: 22px;
+   font-family: "Quicksand", cursive;
+   letter-spacing: 1px;
+   font-size: 24px;
+   font-weight: 700;
+   color: #f4f4f4;
+   height: 55px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #ff8c22;
+   padding: 0 25px;
+   width: 100vw;
+   height: 55px;
+}
+
+rect {
+   height: 20px;
+   width: 100px;
+   fill: #f4f4f4;
+   rx: 8;
 }
 
 h1 {
-  cursor: pointer;
-  margin: 0;
-  font-size: 24px;
-  color: #FFFCF9;
+   cursor: pointer;
+   margin: 0;
+   font-size: 24px;
+   color: #fffcf9;
 }
 </style>
