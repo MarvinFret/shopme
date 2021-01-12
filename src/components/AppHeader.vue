@@ -21,12 +21,12 @@ header {
    letter-spacing: 1px;
    font-size: 24px;
    font-weight: 700;
-   color: #f4f4f4;
+   color: var(--light-color);
    height: 55px;
    display: flex;
    justify-content: space-between;
    align-items: center;
-   background: #ff8c22;
+   background: var(--primary-color);
    padding: 0 25px;
    width: 100vw;
    height: 55px;

@@ -1,11 +1,8 @@
 <template>
-   <div class="item">
-       Item
-      <div class="info">
-         <div class="amount">{{ categoryItem.amount }}</div>
-         <div class="name">
-            {{ categoryItem.name }}
-         </div>
+   <div class="item" v-for="item in items" :key="item.index">
+      <div class="info" v-if="item.category === category">
+         <div class="amount">{{ item.amount }} x</div>
+         <div class="name">{{ item.name }}</div>
       </div>
       <div class="actions">
          <div class="remove">-</div>
@@ -16,14 +13,16 @@
 
 
 <script>
-import { ref } from "vue";
+import { inject } from "vue";
 export default {
-   props: { item: Object },
+   props: { category: String },
    setup(props) {
-      const categoryItem = ref({ ...props.item });
-      console.log(categoryItem.value);
+      let items = inject("items");
+      // console.log(props.category);
+      // console.log(items);
+      items = items.filter((item) => item.category === props.category);
 
-      return {  categoryItem };
+      return { items };
    },
 };
 </script>
@@ -37,17 +36,19 @@ export default {
    margin-bottom: 25px;
 }
 
-.item{
+.item {
    display: flex;
    width: 100%;
-   background: orange;
    justify-content: space-between;
    align-items: center;
-   font-size: 18px;
+   font-size: 14px;
    font-weight: 700;
    padding: 25px;
+   border-bottom: 1px dotted #f4f4f4;
 }
-.actions, .info {
+
+.actions,
+.info {
    display: flex;
    gap: 15px;
 }

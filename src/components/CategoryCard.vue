@@ -1,53 +1,43 @@
 <template>
-   <div class="item">
-      <div class="info">
-         <div class="amount">{{ categoryItem.amount }}</div>
-         <div class="name">
-            {{ categoryItem.name }}
-         </div>
-      </div>
-      <div class="actions">
-         <div class="remove">-</div>
-         <div class="add">+</div>
-      </div>
-      <item-list :item="categoryItem"/>
+   <div class="category-card">
+      <h2 class="category-name">{{ category }}</h2>
+      <item-list :category="category" />
    </div>
 </template>
 
 <script>
-import { ItemList } from "./ItemList";
-import { ref } from "vue";
+import ItemList from "@/components/ItemList";
+// import { ref } from "vue";
 export default {
-   props: { item: Object },
-   components: ItemList,
-   setup(props) {
-      const categoryItem = ref({ ...props.item });
-      console.log(categoryItem.value);
+   components: { ItemList },
+   props: { category: Object },
+   setup() {
+      // console.log(props.category)
+      // const categoryItem = props.category;
+      // console.log(categoryItem.value);
 
-      return { categoryItem };
+      return {};
    },
 };
 </script>
 
 <style scoped>
-.card-wrapper {
+.category-card {
    width: 100%;
+   border-radius: 4px;
    background: #fff;
-   border: 1px solid orange;
-   margin-bottom: 25px;
+   box-shadow: var(--box-shadow-x);
 }
 
-.item{
-   display: flex;
+.category-name {
    width: 100%;
-   background: orange;
-   justify-content: space-between;
-   align-items: center;
+   text-align: left;
    font-size: 18px;
    font-weight: 700;
-   padding: 25px;
+   padding: 25px 25px 0px;
 }
-.actions, .info {
+.actions,
+.info {
    display: flex;
    gap: 15px;
 }
