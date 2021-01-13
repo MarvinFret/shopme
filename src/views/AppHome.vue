@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="home">
       <h1 class="filter-name">All Categories</h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card v-bind:category="category" />
@@ -9,8 +9,8 @@
 
 <script>
 import CategoryCard from "@/components/CategoryCard";
-import { items } from "../data";
-import { provide } from "vue";
+import { inject } from "vue";
+
 // import * as Realm from "realm-web";
 
 export default {
@@ -71,15 +71,10 @@ export default {
       //     console.error(err)
       // });
 
-      
+      let items = inject("items");
 
-      let categories = items.map((item) => item.category);
+      let categories = items.value.map((item) => item.category);
       categories = new Set(categories);
-      console.log(categories);
-      console.log(items);
-
-provide("items", items);
-provide("categories", categories);
 
       return { items, categories };
    },
@@ -87,6 +82,10 @@ provide("categories", categories);
 </script>
 
 <style scoped>
+.home {
+   height: 100%;
+   width: 100%;
+}
 .category_item {
    background: linear-gradient(30deg, rgb(253, 207, 207), rgb(140, 140, 236));
    padding: 6rem;

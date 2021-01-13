@@ -9,16 +9,19 @@ export default {
    methods: {
       showCategoryPicker() {
          const el = document.getElementsByClassName("picker-wrapper").item(0);
-         if (!el.classList.contains("slide-in")) el.classList.add("slide-in");
-         else el.classList.remove("slide-in");
+         if (!el.classList.contains("slide-in")) {
+            el.classList.add("slide-in");
+         } else {
+            el.classList.remove("slide-in");
+         }
       },
    },
 };
 </script>
 
-<style>
+<style scoped>
 .add-button-wrapper {
-   position: absolute;
+   position: fixed;
    right: 35px;
    bottom: 45px;
    width: 50px;

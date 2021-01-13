@@ -1,21 +1,21 @@
 <template>
    <div class="picker-wrapper">
       <ul class="category-list">
-         <li class="category">Food</li>
-         <li class="category">Drinks</li>
-         <li class="category">Goods</li>
+         <li class="category" @click="$emit('toggle-AddItem', 'Food')">Food</li>
+         <li class="category" @click="$emit('toggle-AddItem', 'Drink')">Drink</li>
+         <li class="category" @click="$emit('toggle-AddItem', 'Good')">Good</li>
       </ul>
    </div>
 </template>
 
 <script>
-
-export default {};
+export default {
+};
 </script>
 
-<style>
+<style scoped>
 .picker-wrapper {
-   position: absolute;
+   position: fixed;
    bottom: 0;
    background: #fff;
    width: 100%;

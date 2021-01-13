@@ -17,6 +17,7 @@
 </script>
 <style scoped>
 header {
+   position: fixed;
    font-family: "Quicksand", cursive;
    letter-spacing: 1px;
    font-size: 24px;

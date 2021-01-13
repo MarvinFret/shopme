@@ -20,7 +20,7 @@ export default {
       let items = inject("items");
       // console.log(props.category);
       // console.log(items);
-      items = items.filter((item) => item.category === props.category);
+      items = items.value.filter((item) => item.category === props.category);
 
       return { items };
    },

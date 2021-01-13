@@ -2,19 +2,60 @@
    <app-header></app-header>
    <router-view />
    <add-button />
-   <category-picker />
+   <add-item
+      v-if="showAddItem"
+      @toggle-AddItem="toggleAddItem"
+      @addItem="addItem"
+      :category="category"
+   />
+   <category-picker @toggle-AddItem="toggleAddItem" />
 </template>
 
 <script>
 import AppHeader from "@/components/AppHeader";
 import AddButton from "@/components/AddButton";
+import AddItem from "@/components/AddItem";
 import CategoryPicker from "@/components/CategoryPicker";
+import { ref, provide } from "vue";
+import { items } from "./data";
 
 export default {
    components: {
       AppHeader,
       AddButton,
+      AddItem,
       CategoryPicker,
+   },
+   methods: {
+      toggleAddItem(category) {
+         this.category = category;
+         this.showAddItem = !this.showAddItem;
+      },
+      addItem(item) {
+         
+         console.log("received:");
+         console.log(item);
+         this.itemList.push(item);
+         console.log(this.itemList); 
+         // this.items.push(e);
+      }
+   },
+   watch: {
+itemList(){
+   return console.log("change");
+}
+   },
+
+   setup() {
+      let showAddItem = ref(false);
+      let category = ref("");
+      let itemList = ref(items);
+
+     provide("items", itemList);
+
+
+
+      return { showAddItem, category, itemList };
    },
 };
 </script>
@@ -25,6 +66,8 @@ export default {
    --light-color: #fffcf9;
    --dark-color: #392008;
    --box-shadow-x: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+   --cancel: #ab0000;
+   --confirm: #0eab00;
 }
 * {
    margin: 0;
@@ -53,22 +96,6 @@ li a {
    color: inherit;
 }
 
-@media only screen and (min-width: 600px) {
-   .grid_wrapper {
-      display: grid;
-      margin-top: 25px;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-   }
-}
-@media only screen and (min-width: 1000px) {
-   .grid_wrapper {
-      display: grid;
-      margin-top: 25px;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-   }
-}
 ul {
    padding-top: 1rem;
 }
@@ -90,7 +117,16 @@ button {
    padding: 0;
 }
 
+button:focus {
+   outline: none;
+}
+
+input:focus {
+   outline: none;
+}
+
 .slide-in {
-   transform: translate(0, 0);
+   transform: translate(0, 0) !important;
+   visibility: visible !important;
 }
 </style>

@@ -7,14 +7,10 @@
 
 <script>
 import ItemList from "@/components/ItemList";
-// import { ref } from "vue";
 export default {
    components: { ItemList },
-   props: { category: Object },
+   props: { category: String },
    setup() {
-      // console.log(props.category)
-      // const categoryItem = props.category;
-      // console.log(categoryItem.value);
 
       return {};
    },
