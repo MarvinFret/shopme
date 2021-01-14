@@ -11,7 +11,6 @@ export default {
    components: { ItemList },
    props: { category: String },
    setup() {
-
       return {};
    },
 };

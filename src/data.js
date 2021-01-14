@@ -12,6 +12,6 @@ export const items = [
 {
   name:'Water',
   amount: '4',
-  category: "Drinks",
+  category: "Drink",
 },
 ];
