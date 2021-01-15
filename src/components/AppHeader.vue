@@ -3,7 +3,7 @@
       <div class="logo">$hopm€</div>
       <nav>
          <div class="menu-icon">
-            <svg viewBox="0 0 100 80" width="30" height="30">
+            <svg viewBox="0 0 100 70" width="30" height="30">
                <rect></rect>
                <rect y="30"></rect>
                <rect y="60"></rect>
@@ -17,7 +17,9 @@
 </script>
 <style scoped>
 header {
-   position: fixed;
+   position: sticky;
+   top: 0;
+   left: 0;
    font-family: "Quicksand", cursive;
    letter-spacing: 1px;
    font-size: 24px;

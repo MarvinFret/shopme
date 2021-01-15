@@ -1,7 +1,7 @@
 <template>
    <div class="category-card">
       <h2 class="category-name">{{ category }}</h2>
-      <item-list :category="category" />
+      <item-list :category="category" :items="items" />
    </div>
 </template>
 
@@ -9,10 +9,7 @@
 import ItemList from "@/components/ItemList";
 export default {
    components: { ItemList },
-   props: { category: String },
-   setup() {
-      return {};
-   },
+   props: { category: String, items: Object },
 };
 </script>
 

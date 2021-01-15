@@ -2,17 +2,17 @@
    <div class="home">
       <h1 class="filter-name">All Categories</h1>
       <div class="card" v-for="category in categories" :key="category.index">
-         <category-card v-bind:category="category" />
+         <category-card :category="category" :items="itemList" />
       </div>
    </div>
-      <add-item
+   <add-item
       v-if="showAddItem"
       @toggle-AddItem="toggleAddItem"
       @addItem="addItem"
       :category="category"
    />
-      <category-picker @toggle-AddItem="toggleAddItem" />
-     <add-button />
+   <category-picker @toggle-AddItem="toggleAddItem" />
+   <add-button />
 </template>
 
 <script>
@@ -21,9 +21,7 @@ import AddButton from "@/components/AddButton";
 import CategoryPicker from "@/components/CategoryPicker";
 import AddItem from "@/components/AddItem";
 import { items } from "../data";
-import {  ref, provide } from "vue";
-
-// import * as Realm from "realm-web";
+import { ref } from "vue";
 
 export default {
    components: {
@@ -32,31 +30,30 @@ export default {
       CategoryPicker,
       AddItem,
    },
+   data() {
+      return {
+         itemList: ref(items),
+         showAddItem: ref(false),
+         category: ref(""),
+      };
+   },
+   computed: {
+      categories() {
+         const categories = this.itemList.map((item) => item.category);
+         return new Set(categories);
+      },
+   },
    methods: {
-toggleAddItem(category) {
-         this.category = category;
+      toggleAddItem(category) {
          this.showAddItem = !this.showAddItem;
+         this.showAddItem ? (this.category = category) : "";
       },
       addItem(item) {
-         console.log("received:");
-         console.log(item);
          this.itemList.push(item);
-         console.log(this.itemList);
       },
    },
    setup() {
-
-      let showAddItem = ref(false);
-      let categories = items.map((item) => item.category);
-      categories = new Set(categories);
-
-
-      let category = ref("");
-      let itemList = ref(items);
-
-      provide("items", itemList);
-
-      return { showAddItem, items, categories, category, itemList  };
+      return {};
    },
 };
 </script>
@@ -81,7 +78,7 @@ toggleAddItem(category) {
 
 .filter-name {
    font-weight: 700;
-   font-size: 24px;
+   font-size: 20px;
    text-align: left;
    padding: 20px 25px 0;
 }

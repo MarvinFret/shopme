@@ -1,5 +1,5 @@
 <template>
-   <div class="item" v-for="item in items" :key="item.index">
+   <div class="item" v-for="item in itemList" :key="item.index">
       <div class="info" v-if="item.category === category">
          <div class="amount">{{ item.amount }} x</div>
          <div class="name">{{ item.name }}</div>
@@ -13,16 +13,12 @@
 
 
 <script>
-import { inject } from "vue";
 export default {
-   props: { category: String },
-   setup(props) {
-      let items = inject("items");
-      // console.log(props.category);
-      // console.log(items);
-      items = items.value.filter((item) => item.category === props.category);
-
-      return { items };
+   props: { category: String, items: Object },
+   computed: {
+      itemList() {
+         return this.items.filter((item) => item.category === this.category);
+      },
    },
 };
 </script>

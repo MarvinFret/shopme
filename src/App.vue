@@ -1,9 +1,6 @@
 <template>
    <app-header></app-header>
    <router-view />
- 
-
-
 </template>
 
 <script>
@@ -15,12 +12,7 @@ export default {
    components: {
       AppHeader,
    },
-   methods: {
-     
-      
-   },
-   setup() {
-      
+   setup() {   
    },
 };
 </script>
