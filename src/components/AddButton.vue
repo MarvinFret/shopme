@@ -39,7 +39,7 @@ export default {
 
    border-radius: 50%;
    font-size: 32px;
-   color: #333;
+   color: var(--light-color);
 }
 
 .add-button-wrapper > button:focus {

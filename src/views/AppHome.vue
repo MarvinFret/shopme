@@ -1,6 +1,6 @@
 <template>
-   <empty-state v-if="itemList.length === 0"/>
-   <div class="home" v-else>
+   <!-- <empty-state v-if="itemList.length === 0" /> -->
+   <div  class="home" >
       <h1 class="filter-name">All Categories</h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
@@ -25,8 +25,7 @@ import CategoryCard from "@/components/CategoryCard";
 import AddButton from "@/components/AddButton";
 import CategoryPicker from "@/components/CategoryPicker";
 import AddItem from "@/components/AddItem";
-import EmptyState from "@/components/EmptyState";
-import { items } from "../data";
+// import EmptyState from "@/components/EmptyState";
 import { ref } from "vue";
 
 export default {
@@ -35,11 +34,11 @@ export default {
       AddButton,
       CategoryPicker,
       AddItem,
-      EmptyState,
+      // EmptyState,
    },
    data() {
       return {
-         itemList: ref(items),
+         itemList: [{}],
          showAddItem: ref(false),
          category: ref(""),
       };
@@ -75,8 +74,9 @@ export default {
          });
       },
    },
-   mounted() {
-      this.itemList = this.getLocalStorage();
+   created: function() {
+      this.itemList = ref(this.getLocalStorage());
+      console.log(this.itemList.length)
    },
 };
 </script>

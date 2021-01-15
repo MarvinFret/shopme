@@ -25,7 +25,6 @@ header {
    font-size: 24px;
    font-weight: 700;
    color: var(--light-color);
-   height: 55px;
    display: flex;
    justify-content: space-between;
    align-items: center;
