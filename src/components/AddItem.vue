@@ -69,7 +69,7 @@ export default {
          this.amount++;
       },
       decrementAmount() {
-         if (this.amount > 1) this.amount--;
+        this.amount > 1 ? this.amount-- : false;
       },
       sendFormData() {
          if (this.name != "") {
@@ -78,9 +78,8 @@ export default {
                amount: this.amount.toString(),
                category: this.category,
             };
-            console.log("sending: ");
-            console.table(item);
-            this.$emit('addItem', item)
+            this.$emit('addItem', item);
+            
          }
       },
    },
@@ -101,7 +100,7 @@ export default {
    top: 0;
    left: 0;
    z-index: 5;
-   background: rgba(0, 0, 0, 0.35);
+   background: rgba(0, 0, 0, 0.4);
    display: flex;
    justify-content: center;
    align-items: center;

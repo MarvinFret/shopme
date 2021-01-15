@@ -5,8 +5,11 @@
          <div class="name">{{ item.name }}</div>
       </div>
       <div class="actions">
-         <div class="remove">-</div>
-         <div class="add">+</div>
+         <div class="increment" @click.prevent="incrementAmount(item)">+</div>
+         <div class="decrement" @click.prevent="decrementAmount(item)">-</div>
+         <div class="remove" @click.prevent="removeItem( item.name)">
+            &#10005;
+         </div>
       </div>
    </div>
 </template>
@@ -14,7 +17,16 @@
 
 <script>
 export default {
-   props: { category: String, items: Object },
+   props: { category: String, items: Object, removeItem: Function },
+
+   methods: {
+      incrementAmount(item) {
+         item.amount++;
+      },
+      decrementAmount(item) {
+         item.amount > 1 ? item.amount-- : false;
+      }
+   },
    computed: {
       itemList() {
          return this.items.filter((item) => item.category === this.category);
@@ -25,13 +37,6 @@ export default {
 
 
 <style scoped>
-.card-wrapper {
-   width: 100%;
-   background: #fff;
-   border: 1px solid orange;
-   margin-bottom: 25px;
-}
-
 .item {
    display: flex;
    width: 100%;
@@ -39,13 +44,33 @@ export default {
    align-items: center;
    font-size: 14px;
    font-weight: 700;
-   padding: 25px;
+   height: 50px;
+   padding: 0 25px;
    border-bottom: 1px dotted #f4f4f4;
 }
 
-.actions,
 .info {
    display: flex;
    gap: 15px;
+}
+
+.actions {
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   height: 100%;
+}
+.increment {
+   color: var(--confirm);
+   padding: 5px 10px;
+}
+.decrement {
+   color: var(--cancel);
+   padding: 5px 10px;
+}
+.remove {
+   color: var(--cancel);
+   font-size: 12px;
+   padding: 5px 5px;
 }
 </style>
