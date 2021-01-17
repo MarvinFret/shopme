@@ -1,6 +1,6 @@
 <template>
    <!-- <empty-state v-if="itemList.length === 0" /> -->
-   <div  class="home" >
+   <div class="home">
       <h1 class="filter-name">All Categories</h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
@@ -38,13 +38,14 @@ export default {
    },
    data() {
       return {
-         itemList: [{}],
+         itemList: {},
          showAddItem: ref(false),
          category: ref(""),
       };
    },
    computed: {
       categories() {
+         if (this.itemList.length === 0) return;
          const categories = this.itemList.map((item) => item.category);
          return new Set(categories);
       },
@@ -59,10 +60,17 @@ export default {
          this.setLocalStorage();
       },
       getLocalStorage() {
-         return JSON.parse(localStorage.getItem("items"));
+         let localStorage;
+         if (!window.localStorage.getItem("items")) {
+            localStorage = window.localStorage.setItem("items", [""]);
+            return Array.from(window.localStorage.getItem("items"));
+         }
+         localStorage = window.localStorage.getItem("items");
+         localStorage = JSON.parse(localStorage);
+         return localStorage;
       },
       setLocalStorage() {
-         localStorage.setItem("items", JSON.stringify(this.itemList));
+         window.localStorage.setItem("items", JSON.stringify(this.itemList));
       },
       removeItem(itemName) {
          this.itemList.find((item, index) => {
@@ -74,9 +82,8 @@ export default {
          });
       },
    },
-   created: function() {
-      this.itemList = ref(this.getLocalStorage());
-      console.log(this.itemList.length)
+   created: function () {
+      this.itemList = this.getLocalStorage();
    },
 };
 </script>
