@@ -39,6 +39,7 @@ export default {
    text-align: center;
    color: var(--dark-color);
    background: var(--light-color);
+   height: 100vh;
 }
 
 ul {
@@ -89,5 +90,9 @@ input:focus {
 
 .rotate-45-deg{
    transform: rotate(45deg);
+}
+
+.fade_in{
+   opacity: 1 !important;
 }
 </style>

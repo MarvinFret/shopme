@@ -1,5 +1,7 @@
 <template>
+
    <empty-state v-if="itemList.length === 0" />
+
    <div v-else class="home">
       <h1 class="filter-name">All Categories</h1>
       <div class="card" v-for="category in categories" :key="category.index">
@@ -7,18 +9,22 @@
             :category="category"
             :items="itemList"
             :removeItem="removeItem"
-             @toggle-AddItem="toggleAddItem"
+            @toggle-AddItem="toggleAddItem"
          />
       </div>
    </div>
+
    <add-item
       v-if="showAddItem"
       @toggle-AddItem="toggleAddItem"
       @addItem="addItem"
       :category="category"
+      :class="{fade_in: showAddItem}"
    />
+ 
    <category-picker @toggle-AddItem="toggleAddItem" />
-   <add-button />
+   <add-button /> 
+
 </template>
 
 <script>

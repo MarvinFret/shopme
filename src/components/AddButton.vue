@@ -1,6 +1,8 @@
 <template>
-   <div class="add-button-wrapper" @click="showCategoryPicker">
-      <button>+</button>
+   <div class="add-button-layover" @click.stop="showCategoryPicker">
+      <div class="add-button-wrapper" @click.stop="showCategoryPicker">
+         <button>+</button>
+      </div>
    </div>
 </template>
 
@@ -14,11 +16,16 @@ export default {
          const addButton = document
             .getElementsByClassName("add-button-wrapper")
             .item(0);
+         const addButtonLayover = document
+            .getElementsByClassName("add-button-layover")
+            .item(0);
          if (!pickerWrapper.classList.contains("slide-in")) {
             pickerWrapper.classList.add("slide-in");
+            addButtonLayover.style.height = "100%";
             addButton.classList.add("rotate-45-deg");
          } else {
             pickerWrapper.classList.remove("slide-in");
+            addButtonLayover.style.height = "";
             addButton.classList.remove("rotate-45-deg");
          }
       },
@@ -27,15 +34,22 @@ export default {
 </script>
 
 <style scoped>
+.add-button-layover {
+   width: 100%;
+   display: inherit;
+   position: absolute;
+   top: 0;
+}
+
 .add-button-wrapper {
    position: fixed;
-   right: 35px;
+   right: 25px;
    bottom: 45px;
    width: 50px;
    height: 50px;
    border-radius: 50%;
    font-size: 32px;
-   z-index: 2;
+   z-index: 3;
    background: var(--primary-color);
    box-shadow: var(--box-shadow-x);
    transition: 300ms ease-in-out;

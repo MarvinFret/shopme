@@ -7,7 +7,7 @@
       <div class="actions">
          <div class="increment" @click.prevent="incrementAmount(item)">+</div>
          <div class="decrement" @click.prevent="decrementAmount(item)">-</div>
-         <div class="remove" @click.prevent="removeItem( item.name)">
+         <div class="remove" @click.prevent="removeItem(item.name)">
             &#10005;
          </div>
       </div>
@@ -25,7 +25,7 @@ export default {
       },
       decrementAmount(item) {
          item.amount > 1 ? item.amount-- : false;
-      }
+      },
    },
    computed: {
       itemList() {

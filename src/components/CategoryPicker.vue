@@ -2,31 +2,38 @@
    <div class="picker-wrapper">
       <ul class="category-list">
          <li class="category" @click="$emit('toggle-AddItem', 'Food')">Food</li>
-         <li class="category" @click="$emit('toggle-AddItem', 'Drink')">Drink</li>
+         <li class="category" @click="$emit('toggle-AddItem', 'Drink')">
+            Drink
+         </li>
          <li class="category" @click="$emit('toggle-AddItem', 'Good')">Good</li>
       </ul>
    </div>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style scoped>
 .picker-wrapper {
    position: fixed;
    bottom: 0;
-   background: #fff;
+   background: rgba(0, 0, 0, 0);
    width: 100%;
-   box-shadow: 0 -1px 4px 0px rgba(0, 0, 0, 0.25);
-   border-radius: 4px 4px 0 0;
    transform: translate(0, 175px);
    transition: 300ms ease-in-out;
+   z-index: 2;
 }
 
 ul.category-list {
    padding-top: 5px;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   box-shadow: 0 -1px 4px 0px rgba(0, 0, 0, 0.25);
+   border-radius: 4px 4px 0 0;
+   background: #fff;
 }
 
 li.category {

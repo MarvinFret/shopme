@@ -32,6 +32,7 @@ header {
    padding: 0 25px;
    width: 100vw;
    height: 55px;
+   z-index: 5;
 }
 
 rect {

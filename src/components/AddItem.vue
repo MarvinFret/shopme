@@ -1,5 +1,5 @@
 <template>
-   <div class="layover">
+   <div class="add-item-layover">
       <div class="component-wrapper">
          <h2 class="heading">Which {{ category }}?</h2>
          <form action="">
@@ -69,7 +69,7 @@ export default {
          this.amount++;
       },
       decrementAmount() {
-        this.amount > 1 ? this.amount-- : false;
+         this.amount > 1 ? this.amount-- : false;
       },
       sendFormData() {
          if (this.name != "") {
@@ -78,14 +78,14 @@ export default {
                amount: this.amount.toString(),
                category: this.category,
             };
-            this.$emit('addItem', item);
-            this.$emit('toggle-AddItem');
+            this.$emit("addItem", item);
+            this.$emit("toggle-AddItem");
          }
       },
    },
    setup() {
-      let amount = ref(1);
-      let name = ref("");
+      const amount = ref(1);
+      const name = ref("");
 
       return { name, amount };
    },
@@ -93,7 +93,7 @@ export default {
 </script>
 
 <style scoped>
-.layover {
+.add-item-layover {
    width: 100vw;
    height: 100vh;
    position: absolute;
@@ -104,6 +104,8 @@ export default {
    display: flex;
    justify-content: center;
    align-items: center;
+   opacity: 0;
+   transition: 300ms ease-in-out;
 }
 
 .component-wrapper {
@@ -207,6 +209,7 @@ form {
    border: 2px solid var(--confirm);
    color: var(--confirm);
    border-radius: 4px;
+   transition: 300ms;
 }
 
 .confirm.inactive {
