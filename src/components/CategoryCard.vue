@@ -1,6 +1,6 @@
 <template>
    <div class="category-card">
-      <h2 class="category-name">{{ category }}</h2>
+      <h2 class="category-name" @click="$emit('toggle-AddItem', category)">{{ category }}</h2>
       <item-list :category="category" :items="items" :removeItem="removeItem"/>
    </div>
 </template>

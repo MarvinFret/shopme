@@ -86,4 +86,8 @@ input:focus {
    transform: translate(0, 0) !important;
    visibility: visible !important;
 }
+
+.rotate-45-deg{
+   transform: rotate(45deg);
+}
 </style>

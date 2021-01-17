@@ -22,7 +22,7 @@ export default {
    box-shadow: 0 -1px 4px 0px rgba(0, 0, 0, 0.25);
    border-radius: 4px 4px 0 0;
    transform: translate(0, 175px);
-   transition: 300ms ease-out;
+   transition: 300ms ease-in-out;
 }
 
 ul.category-list {

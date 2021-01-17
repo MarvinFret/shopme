@@ -8,11 +8,18 @@
 export default {
    methods: {
       showCategoryPicker() {
-         const el = document.getElementsByClassName("picker-wrapper").item(0);
-         if (!el.classList.contains("slide-in")) {
-            el.classList.add("slide-in");
+         const pickerWrapper = document
+            .getElementsByClassName("picker-wrapper")
+            .item(0);
+         const addButton = document
+            .getElementsByClassName("add-button-wrapper")
+            .item(0);
+         if (!pickerWrapper.classList.contains("slide-in")) {
+            pickerWrapper.classList.add("slide-in");
+            addButton.classList.add("rotate-45-deg");
          } else {
-            el.classList.remove("slide-in");
+            pickerWrapper.classList.remove("slide-in");
+            addButton.classList.remove("rotate-45-deg");
          }
       },
    },
@@ -31,6 +38,7 @@ export default {
    z-index: 2;
    background: var(--primary-color);
    box-shadow: var(--box-shadow-x);
+   transition: 300ms ease-in-out;
 }
 
 .add-button-wrapper > button {

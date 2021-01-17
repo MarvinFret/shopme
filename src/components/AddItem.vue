@@ -79,7 +79,7 @@ export default {
                category: this.category,
             };
             this.$emit('addItem', item);
-            
+            this.$emit('toggle-AddItem');
          }
       },
    },
@@ -126,7 +126,7 @@ export default {
 .details {
    display: flex;
    justify-content: space-between;
-   font-size: 14px;
+   font-size: 16px;
    width: 100%;
 }
 
@@ -149,15 +149,16 @@ form {
 }
 
 .amount {
-   width: 30%;
+   width: 35%;
 }
 
 .details input {
    width: 100%;
-   height: 30px;
+   height: 35px;
    border: none;
    background: #f4f4f4;
    text-align: inherit;
+   font-size: 14px;
 }
 
 .amount-wrapper {
@@ -190,9 +191,9 @@ form {
 
 .actions button {
    width: 120px;
-   height: 40px;
+   height: 35px;
    background: #fff;
-   font-size: 18px;
+   font-size: 16px;
    font-weight: 700;
    padding-top: 2px;
 }
