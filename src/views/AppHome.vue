@@ -95,10 +95,7 @@ export default {
 </script>
 
 <style scoped>
-.home {
-   height: 100%;
-   width: 100%;
-}
+
 .category_item {
    background: linear-gradient(30deg, rgb(253, 207, 207), rgb(140, 140, 236));
    padding: 6rem;
