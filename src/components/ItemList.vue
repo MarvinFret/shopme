@@ -7,9 +7,7 @@
       <div class="actions">
          <div class="decrement" @click.prevent="decrementAmount(item)">-</div>
          <div class="increment" @click.prevent="incrementAmount(item)">+</div>
-         <div class="remove" @click.prevent="removeItem(item.name)">
-           &#10006;
-         </div>
+         <div class="remove" @click.prevent="removeItem(item.name)"><span>+</span></div>
       </div>
    </div>
 </template>
@@ -69,8 +67,11 @@ export default {
    padding: 5px 10px;
 }
 .remove {
-   color: #7a7a7a;
-   font-size: 12px;
-   padding: 5px 5px;
+   color: var(--light-gray);
+   padding: 5px 10px;
+}
+.remove span{
+    transform: rotate(45deg);
+    display: inline-block;
 }
 </style>

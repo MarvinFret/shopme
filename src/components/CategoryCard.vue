@@ -2,7 +2,6 @@
    <div class="category-card">
       <div class="category-name">
          <h2 @click="$emit('toggle-AddItem', category)">{{ category }}</h2>
-         <span class="checkmark">&#10004;</span>
       </div>
       <item-list :category="category" :items="items" :removeItem="removeItem" />
    </div>
@@ -39,7 +38,7 @@ export default {
 }
 
 .checkmark{
-   color: #7a7a7a;
+   color: var(--light-gray);
 }
 .actions,
 .info {
