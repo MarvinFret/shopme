@@ -19,10 +19,11 @@ export default {
 
 <style>
 :root {
-   --primary-color: #ff8c22;
+   --primary-color: rgb(255, 140, 34);
    --light-color: #fffcf9;
    --dark-color: #392008;
    --box-shadow-x: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+   --box-shadow-primary-color: 0 4px 4px 0 rgba(116, 64, 16, 0.486);
    --cancel: #ab0000;
    --confirm: #0eab00;
 }

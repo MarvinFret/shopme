@@ -1,7 +1,10 @@
 <template>
    <div class="add-button-layover" @click.stop="showCategoryPicker">
       <div class="add-button-wrapper" @click.stop="showCategoryPicker">
-         <button>+</button>
+         <svg width="50" height="50">
+            <rect height="4" width="24" x="13" y="23"/>
+            <rect height="24" width="4" x="23" y="13"/>
+         </svg>
       </div>
    </div>
 </template>
@@ -34,6 +37,11 @@ export default {
 </script>
 
 <style scoped>
+rect {
+   rx: 2;
+   fill: #f4f4f4;
+}
+
 .add-button-layover {
    width: 100%;
    display: inherit;
