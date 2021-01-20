@@ -17,21 +17,22 @@
                   <label for="amount">Amount</label>
                   <div class="amount-wrapper">
                      <button
-                        class="edit increment"
-                        @click.prevent="incrementAmount"
+                        class="edit decrement"
+                        @click.prevent="decrementAmount"
                      >
-                        +
+                        -
                      </button>
+                     
                      <input
                         type="number"
                         name="amount"
                         v-model.number="amount"
                      />
                      <button
-                        class="edit decrement"
-                        @click.prevent="decrementAmount"
+                        class="edit increment"
+                        @click.prevent="incrementAmount"
                      >
-                        -
+                        +
                      </button>
                   </div>
                </div>
@@ -94,9 +95,9 @@ export default {
 
 <style scoped>
 .add-item-layover {
-   width: 100vw;
-   height: 100vh;
-   position: absolute;
+   width: 100%;
+   height: 100%;
+   position: fixed;
    top: 0;
    left: 0;
    z-index: 5;
@@ -201,7 +202,7 @@ form {
 }
 
 .cancel {
-   border: 2px solid var(--cancel);
+   /* border: 2px solid var(--cancel); */
    color: var(--cancel);
    border-radius: 4px;
 }

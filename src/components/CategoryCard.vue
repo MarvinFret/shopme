@@ -1,7 +1,10 @@
 <template>
    <div class="category-card">
-      <h2 class="category-name" @click="$emit('toggle-AddItem', category)">{{ category }}</h2>
-      <item-list :category="category" :items="items" :removeItem="removeItem"/>
+      <div class="category-name">
+         <h2 @click="$emit('toggle-AddItem', category)">{{ category }}</h2>
+         <span class="checkmark">&#10004;</span>
+      </div>
+      <item-list :category="category" :items="items" :removeItem="removeItem" />
    </div>
 </template>
 
@@ -21,12 +24,22 @@ export default {
    box-shadow: var(--box-shadow-x);
 }
 
-.category-name {
-   width: 100%;
-   text-align: left;
+.category-name{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+      width: 100%;
+   text-align: left;  
+   padding: 25px 25px 0px;
+}
+
+.category-name h2 {
    font-size: 18px;
    font-weight: 700;
-   padding: 25px 25px 0px;
+}
+
+.checkmark{
+   color: #7a7a7a;
 }
 .actions,
 .info {
