@@ -37,9 +37,6 @@ export default {
    font-weight: 700;
 }
 
-.checkmark{
-   color: var(--light-gray);
-}
 .actions,
 .info {
    display: flex;

@@ -24,7 +24,7 @@ export default {
    --dark-color: #392008;
    --light-gray: #0000003b;
    --box-shadow-x: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-   --box-shadow-primary-color: 0 4px 4px 0 rgba(116, 64, 16, 0.486);
+   --box-shadow-primary-color: 0 2px 4px 0 rgba(116, 64, 16, 0.486);
    --cancel: #ab0000;
    --confirm: #0eab00;
 }

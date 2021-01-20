@@ -11,6 +11,7 @@
                      name="name"
                      placeholder="Name"
                      v-model="name"
+                     autofocus
                   />
                </div>
                <div class="amount">
@@ -148,9 +149,13 @@ form {
    text-align: left;
    font-weight: 700;
    border-radius: 4px;
-   border-bottom: 1px solid var(--primary-color);
 }
 
+.details input:focus,
+.amount:focus{
+   border-bottom: 1px solid var(--primary-color);
+   transition: 300ms;
+}
 .amount {
    width: 35%;
 }
@@ -159,6 +164,7 @@ form {
    width: 100%;
    height: 35px;
    border: none;
+   border-radius: 4px;
    background: #f4f4f4;
    text-align: inherit;
    font-size: 14px;
@@ -202,12 +208,10 @@ form {
 }
 
 .cancel {
-   /* border: 2px solid var(--cancel); */
    color: var(--cancel);
    border-radius: 4px;
 }
 .confirm {
-   border: 2px solid var(--confirm);
    color: var(--confirm);
    border-radius: 4px;
    transition: 300ms;
