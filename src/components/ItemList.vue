@@ -7,7 +7,9 @@
       <div class="actions">
          <div class="decrement" @click.prevent="decrementAmount(item)">-</div>
          <div class="increment" @click.prevent="incrementAmount(item)">+</div>
-         <div class="remove" @click.prevent="removeItem(item.name)"><span>+</span></div>
+         <div class="remove" @click.prevent="removeItem(item.name)">
+            <span>+</span>
+         </div>
       </div>
    </div>
 </template>
@@ -34,44 +36,5 @@ export default {
 </script>
 
 
-<style scoped>
-.item {
-   display: flex;
-   width: 100%;
-   justify-content: space-between;
-   align-items: center;
-   font-size: 14px;
-   font-weight: 700;
-   height: 50px;
-   padding: 0 20px 0 25px;
-   border-bottom: 1px dotted #f4f4f4;
-}
-
-.info {
-   display: flex;
-   gap: 15px;
-}
-
-.actions {
-   display: flex;
-   align-items: center;
-   font-size: 18px;
-   height: 100%;
-}
-.increment {
-   color: var(--confirm);
-   padding: 5px 10px;
-}
-.decrement {
-   color: var(--cancel);
-   padding: 5px 10px;
-}
-.remove {
-   color: var(--light-gray);
-   padding: 5px 10px;
-}
-.remove span{
-    transform: rotate(45deg);
-    display: inline-block;
-}
+<style src="../styles/ItemList.css" lang="css" scoped>
 </style>

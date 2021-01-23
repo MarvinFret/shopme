@@ -36,44 +36,5 @@ export default {
 };
 </script>
 
-<style scoped>
-rect {
-   rx: 2;
-   fill: #f4f4f4;
-}
-
-.add-button-layover {
-   width: 100%;
-   display: inherit;
-   position: absolute;
-   top: 0;
-}
-
-.add-button-wrapper {
-   position: fixed;
-   right: 25px;
-   bottom: 45px;
-   width: 50px;
-   height: 50px;
-   border-radius: 50%;
-   font-size: 32px;
-   z-index: 3;
-   background: var(--primary-color);
-   box-shadow: var(--box-shadow-x);
-   transition: 300ms ease-in-out;
-}
-
-.add-button-wrapper > button {
-   width: 50px;
-   height: 50px;
-
-   border-radius: 50%;
-   font-size: 32px;
-   color: var(--light-color);
-}
-
-.add-button-wrapper > button:focus {
-   border: none;
-   outline: none;
-}
+<style src="../styles/AddButton.css" lang="css" scoped>
 </style>

@@ -94,25 +94,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style src="../styles/AppHome.css" lang="css" scoped>
 
-.category_item {
-   background: linear-gradient(30deg, rgb(253, 207, 207), rgb(140, 140, 236));
-   padding: 6rem;
-}
-
-.card {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   padding: 25px 25px 15px;
-}
-
-.filter-name {
-   font-weight: 700;
-   font-size: 20px;
-   text-align: left;
-   padding: 20px 25px 0;
-}
 </style>
