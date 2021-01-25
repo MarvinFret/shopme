@@ -36,5 +36,5 @@ export default {
 };
 </script>
 
-<style src="../styles/AddButton.css" lang="css" scoped>
+<style src="../styles/AddButton.scss" lang="scss" scoped>
 </style>

@@ -94,6 +94,6 @@ export default {
 };
 </script>
 
-<style src="../styles/AppHome.css" lang="css" scoped>
+<style src="../styles/AppHome.scss" lang="scss" scoped>
 
 </style>

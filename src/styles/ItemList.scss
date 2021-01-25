@@ -21,24 +21,26 @@
   font-size: 18px;
   height: 100%;
   cursor: pointer;
-}
+  &:active {
+    border: 0;
+    outline: 0;
+  }
+  .increment {
+    color: var(--confirm);
+    padding: 5px 10px;
+  }
 
-.increment {
-  color: var(--confirm);
-  padding: 5px 10px;
-}
+  .decrement {
+    color: var(--cancel);
+    padding: 5px 10px;
+  }
 
-.decrement {
-  color: var(--cancel);
-  padding: 5px 10px;
-}
-
-.remove {
-  color: var(--light-gray);
-  padding: 5px 10px;
-}
-
-.remove span {
-  transform: rotate(45deg);
-  display: inline-block;
+  .remove {
+    color: var(--light-gray);
+    padding: 5px 10px;
+    & span {
+      transform: rotate(45deg);
+      display: inline-block;
+    }
+  }
 }

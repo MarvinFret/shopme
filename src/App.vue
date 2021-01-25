@@ -12,8 +12,6 @@ export default {
    components: {
       AppHeader,
    },
-   setup() {   
-   },
 };
 </script>
 
@@ -84,8 +82,6 @@ button:focus {
 input:focus {
    outline: none;
 }
-
-
 
 .slide-in {
    transform: translate(0, 0) !important;

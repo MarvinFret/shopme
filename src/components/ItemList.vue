@@ -36,5 +36,5 @@ export default {
 </script>
 
 
-<style src="../styles/ItemList.css" lang="css" scoped>
+<style src="../styles/ItemList.scss" lang="scss" scoped>
 </style>
