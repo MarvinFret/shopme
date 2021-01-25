@@ -89,7 +89,8 @@ input:focus {
 }
 
 .rotate-45-deg{
-   transform: rotate(45deg);
+   transform: rotate(45deg) scale(0);
+   opacity: 0;
 }
 
 .fade_in{
