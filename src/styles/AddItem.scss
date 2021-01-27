@@ -51,6 +51,8 @@ form {
       background: #f4f4f4;
       text-align: inherit;
       font-size: 14px;
+      -moz-appearance: textfield;
+      -webkit-appearance: textfield;
       appearance: textfield;
     }
 
