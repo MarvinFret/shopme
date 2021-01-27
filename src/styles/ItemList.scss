@@ -27,7 +27,7 @@
     color: var(--confirm);
     padding: 5px 10px;
     &:active {
-      background-color: #ff8d222f;
+      background-color: var(--highlight-color);
     }
   }
 
@@ -35,7 +35,7 @@
     color: var(--cancel);
     padding: 5px 10px;
     &:active {
-      background-color: #ff8d222f;
+      background-color: var(--highlight-color);
     }
   }
 
@@ -43,7 +43,7 @@
     color: var(--light-gray);
     padding: 5px 10px;
     &:active {
-      background-color: #ff8d222f;
+      background-color: var(--highlight-color);
     }
     & span {
       transform: rotate(45deg);

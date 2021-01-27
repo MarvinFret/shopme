@@ -1,10 +1,10 @@
 <template>
    <div class="add-item-layover">
       <div class="component-wrapper">
-         <h2 class="heading">Which {{ category }}?</h2>
+         <h2 class="component-wrapper__heading">Which {{ category }}?</h2>
          <form action="">
             <div class="details">
-               <div class="name">
+               <div class="details__name">
                   <label for="name">Name</label>
                   <input
                      type="text"
@@ -14,9 +14,9 @@
                      autofocus
                   />
                </div>
-               <div class="amount">
+               <div class="details__amount">
                   <label for="amount">Amount</label>
-                  <div class="amount-wrapper">
+                  <div class="details__amount__amount-wrapper">
                      <button
                         class="edit decrement"
                         @click.prevent="decrementAmount"
