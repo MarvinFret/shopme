@@ -1,17 +1,14 @@
 <template>
-   <app-header></app-header>
+   
    <router-view />
 </template>
 
 <script>
-import AppHeader from "@/components/AppHeader";
 
 
 
 export default {
-   components: {
-      AppHeader,
-   },
+
 };
 </script>
 
@@ -52,10 +49,6 @@ li a {
    text-decoration: none;
    list-style: none;
    color: inherit;
-}
-
-ul {
-   padding-top: 1rem;
 }
 
 li a {

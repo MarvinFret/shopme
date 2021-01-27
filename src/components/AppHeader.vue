@@ -2,7 +2,7 @@
    <header>
       <div>$hopm€</div>
       <nav>
-         <div class="menu-icon">
+         <div class="menu-icon" @click="$emit('toggle-filter-list')">
             <svg viewBox="0 0 100 70" width="30" height="25">
                <rect></rect>
                <rect y="30"></rect>

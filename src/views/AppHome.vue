@@ -1,9 +1,12 @@
 <template>
-
+<app-header
+@toggle-filter-list="toggleFilterList"></app-header>
    <empty-state v-if="itemList.length === 0" />
 
-   <div v-else class="home" id="mydiv">
-      <h1 class="filter-name" id="mydivheader">All Categories</h1>
+   <div v-else class="home">
+      <filter-list v-if="showFilterList"/>
+      
+      <h1 class="filter-name" >All Categories</h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
             :category="category"
@@ -33,6 +36,8 @@ import AddButton from "@/components/AddButton";
 import CategoryPicker from "@/components/CategoryPicker";
 import AddItem from "@/components/AddItem";
 import EmptyState from "@/components/EmptyState";
+import FilterList from "@/components/FilterList";
+import AppHeader from "@/components/AppHeader";
 // import enableSwipe from "@/composables/enableSwipe";
 import { ref } from "vue";
 
@@ -43,11 +48,14 @@ export default {
       CategoryPicker,
       AddItem,
       EmptyState,
+      FilterList,
+      AppHeader,
    },
    data() {
       return {
          itemList: {},
          showAddItem: ref(false),
+         showFilterList: ref(true),
          category: ref(""),
       };
    },
@@ -67,6 +75,9 @@ export default {
       addItem(item) {
          this.itemList.push(item);
          this.setLocalStorage();
+      },
+      toggleFilterList(){
+         this.showFilterList = !this.showFilterList;
       },
       getLocalStorage() {
          let localStorage;
