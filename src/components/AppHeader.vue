@@ -1,6 +1,6 @@
 <template>
    <header>
-      <div class="logo">$hopm€</div>
+      <div>$hopm€</div>
       <nav>
          <div class="menu-icon">
             <svg viewBox="0 0 100 70" width="30" height="25">
@@ -16,5 +16,5 @@
 <script>
 </script>
 
-<style src="../styles/AppHeader.css" lang="css" scoped>
+<style src="../styles/AppHeader.scss" lang="scss" scoped>
 </style>

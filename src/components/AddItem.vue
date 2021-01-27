@@ -94,5 +94,5 @@ export default {
 };
 </script>
 
-<style src="../styles/AddItem.css" scoped>
+<style src="../styles/AddItem.scss" lang="scss" scoped>
 </style>

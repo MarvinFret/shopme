@@ -16,5 +16,5 @@ export default {
 };
 </script>
 
-<style src='../styles/CategoryCard.css' lang="css" scoped>
+<style src='../styles/CategoryCard.scss' lang="scss" scoped>
 </style>
