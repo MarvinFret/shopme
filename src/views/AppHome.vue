@@ -1,12 +1,14 @@
 <template>
 <app-header
-@toggle-filter-list="toggleFilterList"></app-header>
+@toggle-filter-list="toggleFilterList"
+></app-header>
    <empty-state v-if="itemList.length === 0" />
 
    <div v-else class="home">
-      <filter-list v-if="showFilterList"/>
-      
-      <h1 class="filter-name" >All Categories</h1>
+      <transition name="slide-fade">
+      <filter-list v-if="showFilterList" @set-Filter="setFilter"/>
+      </transition>
+      <h1 class="filter-name" >{{activeFilter}}</h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
             :category="category"
@@ -54,9 +56,10 @@ export default {
    data() {
       return {
          itemList: {},
-         showAddItem: ref(false),
-         showFilterList: ref(true),
+         showAddItem: false,
+         showFilterList:false,
          category: ref(""),
+         activeFilter: "All Categories",
       };
    },
    computed: {
@@ -78,6 +81,10 @@ export default {
       },
       toggleFilterList(){
          this.showFilterList = !this.showFilterList;
+      },
+      setFilter(filterName){
+         this.activeFilter = filterName;
+         this.toggleFilterList();
       },
       getLocalStorage() {
          let localStorage;

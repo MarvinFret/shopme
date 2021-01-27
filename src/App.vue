@@ -92,4 +92,18 @@ input:focus {
 .fade_in {
    opacity: 1 !important;
 }
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease-in;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(200px);
+  opacity: 0;
+}
 </style>

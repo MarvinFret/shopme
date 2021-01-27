@@ -15,5 +15,4 @@ export default {};
 </script>
 
 <style src="../styles/CategoryPicker.scss" lang="scss" scoped>
-
 </style>
