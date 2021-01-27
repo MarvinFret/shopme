@@ -2,8 +2,8 @@
 
    <empty-state v-if="itemList.length === 0" />
 
-   <div v-else class="home">
-      <h1 class="filter-name">All Categories</h1>
+   <div v-else class="home" id="mydiv">
+      <h1 class="filter-name" id="mydivheader">All Categories</h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
             :category="category"
@@ -33,6 +33,7 @@ import AddButton from "@/components/AddButton";
 import CategoryPicker from "@/components/CategoryPicker";
 import AddItem from "@/components/AddItem";
 import EmptyState from "@/components/EmptyState";
+// import enableSwipe from "@/composables/enableSwipe";
 import { ref } from "vue";
 
 export default {
@@ -54,6 +55,7 @@ export default {
       categories() {
          if (this.itemList.length === 0) return;
          const categories = this.itemList.map((item) => item.category);
+
          return new Set(categories);
       },
    },
@@ -89,8 +91,17 @@ export default {
       },
    },
    created: function () {
+      
       this.itemList = this.getLocalStorage();
+      
    },
+   mounted: function() {
+  this.$nextTick(function () {
+    // Code that will run only after the
+    // entire view has been rendered
+   //   enableSwipe();
+  })
+}
 };
 </script>
 
