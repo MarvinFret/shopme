@@ -1,14 +1,12 @@
 <template>
-<app-header
-@toggle-filter-list="toggleFilterList"
-></app-header>
+   <app-header @toggle-filter-list="toggleFilterList"></app-header>
    <empty-state v-if="itemList.length === 0" />
 
    <div v-else class="home">
       <transition name="slide-fade">
-      <filter-list v-if="showFilterList" @set-Filter="setFilter"/>
+         <filter-list v-if="showFilterList" @set-Filter="setFilter" />
       </transition>
-      <h1 class="filter-name" >{{activeFilter}}</h1>
+      <h1 class="filter-name">{{ activeFilter }}</h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
             :category="category"
@@ -24,12 +22,11 @@
       @toggle-AddItem="toggleAddItem"
       @addItem="addItem"
       :category="category"
-      :class="{fade_in: showAddItem}"
+      :class="{ fade_in: showAddItem }"
    />
- 
-   <category-picker @toggle-AddItem="toggleAddItem" />
-   <add-button /> 
 
+   <category-picker @toggle-AddItem="toggleAddItem" />
+   <add-button />
 </template>
 
 <script>
@@ -57,7 +54,7 @@ export default {
       return {
          itemList: {},
          showAddItem: false,
-         showFilterList:false,
+         showFilterList: false,
          category: ref(""),
          activeFilter: "All Categories",
       };
@@ -65,9 +62,15 @@ export default {
    computed: {
       categories() {
          if (this.itemList.length === 0) return;
-         const categories = this.itemList.map((item) => item.category);
-
-         return new Set(categories);
+         const categories = this.itemList.map((item) => {
+            if (
+               item.category === this.activeFilter ||
+               this.activeFilter === "All Categories"
+            ) {
+               return item.category;
+            }
+         });
+         return new Set(categories.filter(Boolean));
       },
    },
    methods: {
@@ -79,10 +82,10 @@ export default {
          this.itemList.push(item);
          this.setLocalStorage();
       },
-      toggleFilterList(){
+      toggleFilterList() {
          this.showFilterList = !this.showFilterList;
       },
-      setFilter(filterName){
+      setFilter(filterName) {
          this.activeFilter = filterName;
          this.toggleFilterList();
       },
@@ -109,20 +112,17 @@ export default {
       },
    },
    created: function () {
-      
       this.itemList = this.getLocalStorage();
-      
    },
-   mounted: function() {
-  this.$nextTick(function () {
-    // Code that will run only after the
-    // entire view has been rendered
-   //   enableSwipe();
-  })
-}
+   mounted: function () {
+      this.$nextTick(function () {
+         // Code that will run only after the
+         // entire view has been rendered
+         //   enableSwipe();
+      });
+   },
 };
 </script>
 
 <style src="../styles/AppHome.scss" lang="scss" scoped>
-
 </style>

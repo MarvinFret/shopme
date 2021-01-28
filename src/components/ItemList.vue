@@ -7,7 +7,7 @@
       <div class="actions">
          <div class="decrement" @click.prevent="decrementAmount(item)">-</div>
          <div class="increment" @click.prevent="incrementAmount(item)">+</div>
-         <div class="remove" @click.prevent="removeItem(item.name)">
+         <div class="remove" @click.stop="removeItem(item.name)">
             <span>+</span>
          </div>
       </div>

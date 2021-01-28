@@ -15,13 +15,13 @@
          </li>
          <li
             class="filter-wrapper__filter"
-            @click="$emit('set-Filter', 'Drinks')"
+            @click="$emit('set-Filter', 'Drink')"
          >
             Drinks
          </li>
          <li
             class="filter-wrapper__filter"
-            @click="$emit('set-Filter', 'Goods')"
+            @click="$emit('set-Filter', 'Good')"
          >
             Goods
          </li>
