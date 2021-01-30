@@ -11,6 +11,7 @@
                      name="name"
                      placeholder="Name"
                      v-model="name"
+                     autocomplete="off"
                      autofocus
                   />
                </div>
@@ -28,6 +29,7 @@
                         type="number"
                         name="amount"
                         v-model.number="amount"
+                        autocomplete="off"
                      />
                      <button
                         class="edit increment"
