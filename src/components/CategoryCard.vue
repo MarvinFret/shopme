@@ -4,6 +4,9 @@
          <h2 @click="$emit('toggle-AddItem', category)">
             {{ category === "Food" ? category : category + "s" }}
          </h2>
+         <div class="add-item">
+         +
+         </div>
       </div>
       <item-list :category="category" :items="items" :removeItem="removeItem" />
    </div>

@@ -13,7 +13,7 @@ export default {};
    --dark-color: #392008;
    --highlight-color: #ff8d222f;
    --dark-highlight-color: #ff8d22d0;
-   --light-gray: #0000003b;
+   --light-gray: #00000088;
    --box-shadow-x: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
    --box-shadow-primary-color: 0 2px 4px 0 rgba(116, 64, 16, 0.486);
    --cancel: #ab0000;
@@ -32,7 +32,6 @@ export default {};
    text-align: center;
    color: var(--dark-color);
    background: var(--light-color);
-   height: 100vh;
 }
 
 ul {

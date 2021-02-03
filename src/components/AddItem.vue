@@ -88,7 +88,7 @@ export default {
       },
    },
    setup() {
-      const amount = ref(1);
+      const amount = 1;
       const name = ref("");
 
       return { name, amount };
