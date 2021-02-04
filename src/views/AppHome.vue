@@ -6,7 +6,13 @@
       <transition name="slide-fade">
          <filter-list v-if="showFilterList" @set-Filter="setFilter" />
       </transition>
-      <h1 class="filter-name">{{ activeFilter }}</h1>
+      <h1 class="filter-name"><span @click="activeFilter = 'All Categories'">All Cetegories</span>
+         {{
+            activeFilter === "All Categories"
+               ? ""
+               : " > " + activeFilter + "s"
+         }}
+      </h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
             :category="category"
