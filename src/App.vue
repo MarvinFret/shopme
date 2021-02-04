@@ -15,7 +15,9 @@ export default {};
    --dark-highlight-color: #ff8d22d0;
    --light-gray: #00000088;
    --box-shadow-x: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-   --box-shadow-primary-color: 0 2px 4px 0 rgba(116, 64, 16, 0.486);
+   --box-shadow-dark-y: 0 4px 14px 0 rgba(57, 32, 8, 0.15);
+   --box-shadow-dark-x: 4px 0 14px 0 rgba(57, 32, 8, 0.15);
+   --box-shadow-primary-color: 0 4px 14px 0 rgba(255, 140, 34, 0.65);
    --cancel: #ab0000;
    --confirm: #0eab00;
 }
