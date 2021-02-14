@@ -6,12 +6,12 @@
       <transition name="slide-fade">
          <filter-list v-if="showFilterList" @set-Filter="setFilter" />
       </transition>
-      <h1 class="filter-name"><span @click="activeFilter = 'All Categories'">All Cetegories</span>
+      <h1 class="filter-name">
+         <span @click="activeFilter = 'All Categories'">All Categories</span>
          {{
-            activeFilter === "All Categories"
-               ? ""
-               : " > " + activeFilter + "s"
+            activeFilter === "All Categories" ? "" : " > " + activeFilter
          }}
+         {{activeFilter != "Food" && activeFilter != "All Categories" ? "s" : ""}}
       </h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card
@@ -82,7 +82,34 @@ export default {
    methods: {
       toggleAddItem(category) {
          this.showAddItem = !this.showAddItem;
-         this.showAddItem ? (this.category = category) : "";
+         if (this.showAddItem) {
+            this.category = category;
+            document
+               .getElementsByClassName("home")
+               .item(0)
+               .classList.add("blur");
+            document
+               .getElementsByClassName("category-list")
+               .item(0)
+               .classList.add("blur");
+            document
+               .getElementsByTagName("header")
+               .item(0)
+               .classList.add("blur");
+         } else {
+            document
+               .getElementsByClassName("home")
+               .item(0)
+               .classList.remove("blur");
+            document
+               .getElementsByClassName("category-list")
+               .item(0)
+               .classList.remove("blur");
+            document
+               .getElementsByTagName("header")
+               .item(0)
+               .classList.remove("blur");
+         }
       },
       addItem(item) {
          this.itemList.push(item);

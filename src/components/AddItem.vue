@@ -24,7 +24,7 @@
                      >
                         -
                      </button>
-                     
+
                      <input
                         type="number"
                         name="amount"
