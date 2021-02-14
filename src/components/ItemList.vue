@@ -12,12 +12,15 @@
          </div>
       </div>
    </div>
+   <div class="item item--add-item" @click="toggleAddItem(category)">
+      + Add Item
+   </div>
 </template>
 
 
 <script>
 export default {
-   props: { category: String, items: Object, removeItem: Function },
+   props: { category: String, items: Object, removeItem: Function, toggleAddItem: Function },
 
    methods: {
       incrementAmount(item) {

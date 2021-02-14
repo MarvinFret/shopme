@@ -10,6 +10,11 @@
   border-bottom: 1px dotted #f4f4f4;
   top: 0;
   left: 0;
+  
+
+  &--add-item{
+    color: #838383;
+  }
 }
 
 .info {
@@ -26,28 +31,26 @@
   .increment {
     color: var(--confirm);
     padding: 5px 10px;
-    &:active {
-      background-color: var(--highlight-color);
-    }
   }
 
   .decrement {
     color: var(--cancel);
     padding: 5px 10px;
-    &:active {
-      background-color: var(--highlight-color);
-    }
   }
 
   .remove {
     color: var(--light-gray);
     padding: 5px 10px;
-    &:active {
-      background-color: var(--highlight-color);
-    }
+ 
     & span {
       transform: rotate(45deg);
       display: inline-block;
     }
+  }
+
+  & > *:active {
+    background-color: var(--highlight-color);
+    border-radius: 4px
+    ;
   }
 }

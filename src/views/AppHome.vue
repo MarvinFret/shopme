@@ -18,7 +18,7 @@
             :category="category"
             :items="itemList"
             :removeItem="removeItem"
-            @toggle-AddItem="toggleAddItem"
+            :toggleAddItem="toggleAddItem"
          />
       </div>
    </div>
