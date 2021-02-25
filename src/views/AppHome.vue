@@ -11,7 +11,6 @@
          {{
             activeFilter === "All Categories" ? "" : " > " + activeFilter
          }}
-         {{activeFilter != "Food" && activeFilter != "All Categories" ? "s" : ""}}
       </h1>
       <div class="card" v-for="category in categories" :key="category.index">
          <category-card

@@ -1,6 +1,6 @@
 <template>
    <header>
-      <div>$hopm€</div>
+      <div>shopme</div>
       <nav>
          <div class="menu-icon" @click="$emit('toggle-filter-list')">
             <svg viewBox="0 0 100 70" width="30" height="25">
