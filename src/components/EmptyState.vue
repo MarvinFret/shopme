@@ -23,14 +23,16 @@
 
 img{
       width: 75%;
+      max-width: 650px;
 }
 
 .text{
       color: rgba(0,0,0,0.8);
       padding: 10px;
+      font-size: 18px;
 }
 .sub-text{
-      font-size: 14px;
+      font-size: 16px;
 }
 
 </style>
